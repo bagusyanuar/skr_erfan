@@ -56,11 +56,10 @@
     <div class="topNav">
         <div class="container">
             <div class="alignR">
-                <div class="pull-left socialNw">
-                    {{--                    <a href="#"><span class="icon-twitter"></span></a>--}}
-                    {{--                    <a href="#"><span class="icon-facebook"></span></a>--}}
-                    {{--                    <a href="#"><span class="icon-youtube"></span></a>--}}
-                    {{--                    <a href="#"><span class="icon-tumblr"></span></a>--}}
+                <div class="pull-left">
+                    @auth()
+                        <a href="/"><span>Selamat Datang, {{ auth()->user()->username }}</span></a>
+                    @endauth
                 </div>
                 <a href="/"> <span class="icon-home"></span> Beranda</a>
                 @auth()
