@@ -22,7 +22,7 @@
 @section('content')
     <h3>Tentang Kami</h3>
     <div class="content" id="content">
-        Kami Adalah Perusahaan Yang Bergerak Dalam Bidang Jual Beli Sepatu dan Sandal.
+        Rahma Jaya Rotan adalah industri mebel rotan yang berada di desa trangsan.
     </div>
 
 @endsection

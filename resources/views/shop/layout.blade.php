@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Sistem Informasi Aziz Sepatu</title>
+    <title>Sistem Informasi Rahma Jaya Rotan</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -84,22 +84,20 @@ Lower Header Section
     <div id="gototop"></div>
     <header id="header">
         <div class="row">
-            <div class="span4">
-                    <a href="/">
-                        <img  style="height: 60px" src="{{asset('/images/logo_mahdi.jpeg')}}" height="30"
-                             alt="bootstrap sexy shop">
+            <div class="span8">
+                <div style="display: flex">
+                    <a href="/" style="margin-right: 20px">
+                        <img  style="height: 60px" src="{{asset('/images/logo_rjr.png')}}" height="30"
+                              alt="bootstrap sexy shop">
                     </a>
+                    <h2>Rahma Jaya Rotan</h2>
+                </div>
             </div>
-            <div class="span4">
-                {{--                <div class="offerNoteWrapper">--}}
-                {{--                    <h1 class="dotmark">--}}
-                {{--                        <i class="icon-cut"></i>--}}
-                {{--                        Twitter Bootstrap shopping cart HTML template is available @ $14--}}
-                {{--                    </h1>--}}
-                {{--                </div>--}}
-            </div>
+{{--            <div class="span4">--}}
+{{--                --}}
+{{--            </div>--}}
             <div class="span4 alignR">
-                <p><br> <strong> Support (24/7) : 0800 1234 678 </strong><br><br></p>
+                <p><br> <strong> Support (24/7) : 08122971540 </strong><br><br></p>
                 @auth
                     <span class="btn btn-mini" id="cart-item"><span >[ 0 ]</span> <span class="icon-shopping-cart"></span></span>
                     <span class="btn btn-mini" id="btn-history"><span class="icon-archive"></span></span>

@@ -5,7 +5,7 @@
         @includeWhen($isHome, 'shop.sidemenu', ['categories' => $categories])
         <div class="{{ $isHome === true ? 'span9' : 'span12' }}">
             <div class="well well-small">
-                <h3>Our Products </h3>
+                <h3>Produk Kami </h3>
                 <div class="row-fluid">
                     <ul class="thumbnails">
                         @foreach($products as $product)
