@@ -96,7 +96,7 @@ Lower Header Section
 {{--                --}}
 {{--            </div>--}}
             <div class="span4 alignR">
-                <p><br> <strong> Support (24/7) : 08122971540 </strong><br><br></p>
+                <p><br> <strong> Bantuan (24/7) : <a target="_blank" href="https://api.whatsapp.com/send?phone=62895422630233">+62895422630233</a> </strong><br><br></p>
                 @auth
                     <span class="btn btn-mini" id="cart-item"><span >[ 0 ]</span> <span class="icon-shopping-cart"></span></span>
                     <span class="btn btn-mini" id="btn-history"><span class="icon-archive"></span></span>
