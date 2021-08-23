@@ -93,7 +93,7 @@ class TransactionController extends CustomController
 
     public function orderDetail($id)
     {
-        $payment = Payment::with(['user.profiles', 'vendor', 'transaction.cart.product'])->where('status', '=', '0')->firstOrFail();
+        $payment = Payment::with(['user.profiles', 'vendor', 'transaction.cart.product'])->where('id', '=', $id)->firstOrFail();
 //        return $payment->toArray();
         return view('admin.transaction.detail')->with(['payment' => $payment]);
     }
