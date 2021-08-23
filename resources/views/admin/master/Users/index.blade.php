@@ -3,7 +3,7 @@
 @section('content-title')
     <div>
         <div class="f20 f-bold" style="letter-spacing: 1px;"><i class="fa fa-cube mr-2"></i>Admin</div>
-        <div class="my-text-semi-dark f14">Semua Data Admin Di Toko Sepatu</div>
+        <div class="my-text-semi-dark f14">Semua Data Admin</div>
     </div>
 @endsection
 @section('breadcrumb')

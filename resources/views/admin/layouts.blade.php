@@ -24,18 +24,18 @@
 
         <x-sidebar-item url="/admin" title="Dashboard" faIcon="fa fa-tachometer"/>
         <x-sidebar-item-tree title="Master" faIcon="fa fa-hdd-o" id="link-master">
-            <x-sidebar-item url="/admin/admin" title="Users" faIcon="fa fa-user-o" parentId="link-master"/>
-            <x-sidebar-item url="/admin/categories" title="Categories" faIcon="fa fa-tags" parentId="link-master"></x-sidebar-item>
-            <x-sidebar-item url="/admin/products" title="Products" faIcon="fa fa-cube" parentId="link-master"></x-sidebar-item>
-            <x-sidebar-item url="/admin/vouchers" title="Vouchers" faIcon="fa fa-ticket" parentId="link-master"></x-sidebar-item>
-            <x-sidebar-item url="/admin/sliders" title="Sliders" faIcon="fa fa-picture-o" parentId="link-master"></x-sidebar-item>
+            <x-sidebar-item url="/admin/admin" title="User" faIcon="fa fa-user-o" parentId="link-master"/>
+            <x-sidebar-item url="/admin/categories" title="Kategori" faIcon="fa fa-tags" parentId="link-master"></x-sidebar-item>
+            <x-sidebar-item url="/admin/products" title="Produk" faIcon="fa fa-cube" parentId="link-master"></x-sidebar-item>
+            <x-sidebar-item url="/admin/vouchers" title="Voucher" faIcon="fa fa-ticket" parentId="link-master"></x-sidebar-item>
+{{--            <x-sidebar-item url="/admin/sliders" title="Sliders" faIcon="fa fa-picture-o" parentId="link-master"></x-sidebar-item>--}}
             <x-sidebar-item url="/admin/faq" title="FAQ" faIcon="fa fa-picture-o" parentId="link-master"></x-sidebar-item>
         </x-sidebar-item-tree>
-        <li class="nav-header my-text-light">Transactions</li>
-        <x-sidebar-item url="/admin/transaction" title="Incoming Order" faIcon="fa fa-credit-card"/>
-        <li class="nav-header my-text-light">Reports</li>
+        <li class="nav-header my-text-light">Transaksi</li>
+        <x-sidebar-item url="/admin/transaction" title="Pesanan" faIcon="fa fa-credit-card"/>
+        <li class="nav-header my-text-light">Laporan</li>
 {{--        <x-sidebar-item url="/admin/reviews" title="Reviews" faIcon="fa fa-comments-o"/>--}}
-        <x-sidebar-item-tree title="Reports" faIcon="fa fa-pie-chart" id="link-reports">
+        <x-sidebar-item-tree title="Laporan" faIcon="fa fa-pie-chart" id="link-reports">
             <x-sidebar-item url="/admin/report/selling" title="Penjualan" faIcon="fa fa-circle-thin" parentId="link-reports"/>
             <x-sidebar-item url="/admin/report/payment" title="Pembayaran" faIcon="fa fa-circle-thin" parentId="link-reports"/>
             <x-sidebar-item url="/admin/report/items" title="Barang Terjual" faIcon="fa fa-circle-thin" parentId="link-reports"/>

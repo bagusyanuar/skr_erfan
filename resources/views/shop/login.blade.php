@@ -23,7 +23,7 @@
                         <form action="/post-login" method="POST">
                             @csrf
                             <div class="control-group">
-                                <label class="control-label" for="inputEmail">Email</label>
+                                <label class="control-label" for="inputEmail">Username</label>
                                 <div class="controls">
                                     <input class="span3"  type="text" placeholder="Username" name="username">
                                 </div>

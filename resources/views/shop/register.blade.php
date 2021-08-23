@@ -66,7 +66,7 @@
                             </div>
                             <div class="control-group">
                                 <div class="controls">
-                                    <button type="submit" class="defaultBtn">Masuk</button>
+                                    <button type="submit" class="defaultBtn">Daftar</button>
                                 </div>
                             </div>
                         </form>

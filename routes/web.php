@@ -31,6 +31,7 @@ Route::post('/add-cart', 'Main\CartController@addToCart')->middleware('auth');
 Route::get('/payment/{id}', 'Main\TransactionController@paymentPage');
 Route::get('/transaction', 'Main\TransactionController@paymentHistory');
 Route::get('/transaction/{id}', 'Main\TransactionController@transactionDetailPage');
+Route::get('/cetak-bukti/{id}', 'Main\TransactionController@cetakBukti');
 Route::post('/pay', 'Main\TransactionController@pay');
 Route::post('/checkout', 'Main\CartController@checkOut')->middleware('auth');
 

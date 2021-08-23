@@ -58,9 +58,9 @@
             <table class="table table-bordered table-condensed">
                 <thead>
                 <tr>
-                    <th>Product</th>
-                    <th>Description</th>
-                    <th>Unit price</th>
+                    <th>Produk</th>
+                    <th>Deskripsi</th>
+                    <th>Harga</th>
                     <th>Qty</th>
                     <th>Total</th>
                 </tr>
@@ -68,7 +68,7 @@
                 <tbody>
                 @foreach($transaction->cart as $item)
                     <tr>
-                        <td><img width="100" src="{{ $item->product->images }}" alt=""></td>
+                        <td><img width="100" src="{{ asset('/images/uploads/'.$item->product->images) }}" alt=""></td>
                         <td>{{ $item->product->name }}</td>
                         <td>Rp{{ number_format($item->price, '0', ',', '.') }}</td>
                         <td>
@@ -106,6 +106,8 @@
                     </div>
                 </div>
             </div>
+            <br/>
+            <a href="/cetak-bukti/{{$transaction->id}}" target="_blank" id="btn-checkout" class="shopBtn btn-large pull-right">Cetak Bukti</a>
         </div>
     </div>
 @endsection

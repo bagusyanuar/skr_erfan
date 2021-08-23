@@ -111,4 +111,13 @@ class TransactionController extends CustomController
         $transaction->save();
         return redirect('/admin/transaction');
     }
+
+    public function cetakBukti($id)
+    {
+        $transaction = Transactions::with('cart')->where('id', '=', $id)->firstOrFail();
+//        $total = $transaction->sum(function ($v) {
+//            return $v->amount + $v->ongkir - $v->discount;
+//        });
+        return $this->convertToPdf('cetak.nota', ['transaksi' => $transaction]);
+    }
 }
