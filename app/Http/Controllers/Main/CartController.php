@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Main;
 use App\Helper\CustomController;
 use App\Http\Controllers\Controller;
 use App\Model\Cart;
+use App\Model\Products;
 use App\Model\Promo;
 use App\Model\Transactions;
 use App\Model\UserProfile;
@@ -66,6 +67,10 @@ class CartController extends CustomController
                 'qty' => $this->postField('qty'),
                 'price' => $this->postField('price'),
             ];
+            $product = Products::find($this->postField('id'));
+            if($product->qty < (int) $this->postField('qty')){
+                return $this->jsonResponse('Stok Kurang', 202);
+            }
             $this->insert(Cart::class, $data);
             return $this->jsonResponse('Success Save', 200);
         } catch (\Exception $e) {

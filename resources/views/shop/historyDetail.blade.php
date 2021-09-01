@@ -37,7 +37,7 @@
                                     Menunggu
                                     @break
                                     @case('1')
-                                    Di Terima
+                                    Barang Di Kirim
                                     @break
                                     @case('2')
                                     Di Tolak

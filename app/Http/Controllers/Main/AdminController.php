@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Model\Admin;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class AdminController extends CustomController
@@ -75,5 +76,27 @@ class AdminController extends CustomController
         }catch (\Exception $e){
             return $this->jsonResponse('Failed delete', 500);
         }
+    }
+
+    public function dashboard()
+    {
+        $cart = DB::table('carts')
+            ->select([
+                'carts.id',
+                'carts.product_id',
+                'carts.transactions_id',
+                'transactions.status',
+                'carts.qty',
+                'products.name',
+                DB::raw('CAST(SUM(carts.qty) AS INTEGER) as total')
+            ])
+            ->join('transactions', 'carts.transactions_id', '=', 'transactions.id')
+            ->join('products', 'carts.product_id', '=', 'products.id')
+            ->where('transactions.status', '=', '1')
+            ->groupBy('product_id')
+            ->orderBy('total', 'DESC')
+            ->get();
+//        dd($cart->toArray());
+        return view('admin.index')->with(['data' => $cart]);
     }
 }

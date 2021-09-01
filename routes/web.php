@@ -42,9 +42,7 @@ Route::get('/about', function (){
     return view('shop.contact');
 });
 
-Route::get('/admin', function () {
-    return view('admin.index');
-});
+Route::get('/admin', 'Main\AdminController@dashboard');
 
 Route::get('/admin/categories', 'Master\CategoriesControllers@index');
 Route::get('/admin/categories/add', 'Master\CategoriesControllers@add');
@@ -63,6 +61,11 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('/store', 'Main\AdminController@add');
         Route::post('/patch', 'Main\AdminController@patch');
         Route::post('/destroy/{id}', 'Main\AdminController@destroy');
+    });
+
+    Route::group(['prefix' => 'member'], function () {
+        Route::get('/', 'Master\UsersControllers@index');
+        Route::post('/email-send', 'Master\UsersControllers@sendEmail');
     });
 
     Route::group(['prefix' => 'faq'], function () {
@@ -106,6 +109,7 @@ Route::group(['prefix' => 'admin'], function () {
     });
 
     Route::group(['prefix' => 'report'], function (){
+        Route::get('/best-seller', 'Main\TransactionController@bestSeller');
         Route::get('/selling', 'Laporan\PenjualanController@index');
         Route::get('/payment', 'Laporan\PembayaranController@index');
         Route::get('/items', 'Laporan\BarangTerjualController@index');

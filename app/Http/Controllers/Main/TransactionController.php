@@ -7,12 +7,14 @@ namespace App\Http\Controllers\Main;
 use App\Helper\CustomController;
 use App\Model\Cart;
 use App\Model\Payment;
+use App\Model\Products;
 use App\Model\Transactions;
 use App\Model\Vendors;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\DB;
 
 class TransactionController extends CustomController
 {
@@ -108,6 +110,15 @@ class TransactionController extends CustomController
         $payment = $this->update(Payment::class, $data);
         $transaction = Transactions::find($payment['transactions_id']);
         $transaction->status = $this->postField('status');
+        $cart = $transaction->cart;
+        if ($this->postField('status') === '1' || $this->postField('status') === 1) {
+            foreach ($cart as $v) {
+                $currentQty = $v->product->qty;
+                $newQty = $currentQty - $v->qty;
+                $v->product->qty = $newQty;
+                $v->push();
+            }
+        }
         $transaction->save();
         return redirect('/admin/transaction');
     }
@@ -119,5 +130,25 @@ class TransactionController extends CustomController
 //            return $v->amount + $v->ongkir - $v->discount;
 //        });
         return $this->convertToPdf('cetak.nota', ['transaksi' => $transaction]);
+    }
+
+    public function bestSeller(){
+        $cart = DB::table('carts')
+            ->select([
+                'carts.id',
+                'carts.product_id',
+                'carts.transactions_id',
+                'transactions.status',
+                'carts.qty',
+                'products.name',
+                DB::raw('CAST(SUM(carts.qty) AS INTEGER) as total')
+            ])
+            ->join('transactions', 'carts.transactions_id', '=', 'transactions.id')
+            ->join('products', 'carts.product_id', '=', 'products.id')
+            ->where('transactions.status', '=', '1')
+            ->groupBy('product_id')
+            ->orderBy('total', 'DESC')
+            ->get();
+        return $cart->toArray();
     }
 }

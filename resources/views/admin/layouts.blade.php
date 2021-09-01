@@ -25,6 +25,7 @@
         <x-sidebar-item url="/admin" title="Dashboard" faIcon="fa fa-tachometer"/>
         <x-sidebar-item-tree title="Master" faIcon="fa fa-hdd-o" id="link-master">
             <x-sidebar-item url="/admin/admin" title="User" faIcon="fa fa-user-o" parentId="link-master"/>
+            <x-sidebar-item url="/admin/member" title="Member" faIcon="fa fa-group-user" parentId="link-master"/>
             <x-sidebar-item url="/admin/categories" title="Kategori" faIcon="fa fa-tags" parentId="link-master"></x-sidebar-item>
             <x-sidebar-item url="/admin/products" title="Produk" faIcon="fa fa-cube" parentId="link-master"></x-sidebar-item>
             <x-sidebar-item url="/admin/vouchers" title="Voucher" faIcon="fa fa-ticket" parentId="link-master"></x-sidebar-item>

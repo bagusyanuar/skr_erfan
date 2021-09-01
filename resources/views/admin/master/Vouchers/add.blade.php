@@ -34,7 +34,7 @@
                         <x-lazy.input.text id="name" name="name" label="Voucher Name"/>
                         <x-lazy.input.select id="type" name="type" label="Voucher Type">
                                 <option value="public">Public</option>
-                                <option value="birthday">Birthday</option>
+{{--                                <option value="birthday">Birthday</option>--}}
                         </x-lazy.input.select>
                         <x-lazy.input.select id="percent" name="percent" label="Amount Type">
                             <option value=0>Nominal</option>

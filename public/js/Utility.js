@@ -2,12 +2,19 @@ async function addToCart(data) {
     try {
         $('.overlay').toggleClass('show');
         let response = await $.post('/add-cart', data);
-        alert('Berhasil Menambahkan Ke Keranjang');
-        window.location.reload();
+        if(response['status'] === 202){
+            alert('Maaf Stok Kurang');
+        }else{
+            alert('Berhasil Menambahkan Ke Keranjang');
+            window.location.reload();
+        }
     } catch (e) {
         if (e.status === 401) {
             alert('Silahkan Login Terlebih Dahulu');
-        } else {
+        } if (e.status === 202){
+            alert('Maaf Stok Kurang');
+        }
+        else {
             alert('Gagal Menambahkan Ke Keranjang');
         }
     } finally {
